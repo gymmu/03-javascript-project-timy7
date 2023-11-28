@@ -213,39 +213,33 @@ return -1
 export function aufgabe14 (args){
   const input = args
   let count = 0
-  const currentElement = input[i]
-   
-  for (let i = 0; i < input.length; i++)  {
-   
+  let pos = -1
+ 
+    for (let i = 0; i < input.length; i++)  {
+    const currentElement = input[i]
     if (currentElement === "e"){
       count++
-      if (count === 3){
+      if (count === 3)
         return i
       }
-      if (count === 2){
-      return -1 }
-      
-      if (count === 1){
-        return -1 }
-    }
-    if (input.value = "e"){
-      return 2
-    }
   }
+  return -1
 }
 /*Lesen Sie die Eingabe nur bis zum ersten Leerzeichen ein.
 */
 
 export function aufgabe15 (args){
   const input = args
+const result = []
 
   for (let i = 0; i < input.length; i++)  {
     const currentElement = input[i]
-
-  if (currentElement === " "){
-  return currentElement
+  
+    if (currentElement === " "){
+   return result.join("")
   }
-
-  }
-return -1
+  result.push(currentElement)
 }
+return result.join("")
+}
+

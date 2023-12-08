@@ -301,11 +301,26 @@ export function aufgabe17 (args){
 
 export function bubbleSort (args) {
   const input = args
-  const result = []
-  
-  return result.join("")
+  const list = input.split("") // Damit wandeln wir den Text in eine Liste um, das brauchen wir wenn wir Elemente vertauschen möchten.
+  for (let i = 0; i < list.length - 1; i++) {
+    const currentElement = list[i]
+    const nextElement = list[i + 1]
+    if (currentElement.charCodeAt(0) > nextElement.charCodeAt(0)) {
+      // Reihenfolge stimmt nicht, Elemente müssen getauscht werden.
+      const tmp = list[i + 1]
+      list[i + 1] = list[i]
+      list[i] = tmp
+      i = -1 // starte von vorne wenn etwas vertauscht wurde.
+    }
+  }
+  const result = list.join("")
+  console.log(result)
 }
-
+/*diese Funktion herstellt zwei Listen, die Erste ist für belibigen Element, 
+und die zweite ist für den Element der direkt nach dem Element aus der erste liste kommt. Dann uberpüfft der code Zeichen für Zeichen
+ob der Element aus der Erste Liste grösser ist als der Element aus der Zweite LIste.
+Nachdem die Bedingung erfüllt ist, tauscht der Code die Zwei überprüfte Elemente miteinander, wenn die Bedingung wird nicht erfüllt,
+werden die Elemente so wie sie sind in die Reihenfollge angehängt.*/
 
 
 /*Aufgabe 18

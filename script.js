@@ -230,16 +230,105 @@ export function aufgabe14 (args){
 
 export function aufgabe15 (args){
   const input = args
-const result = []
+const result = [] /*leere Liste*/ 
 
   for (let i = 0; i < input.length; i++)  {
     const currentElement = input[i]
   
     if (currentElement === " "){
-   return result.join("")
+   return result.join("") 
   }
-  result.push(currentElement)
+  result.push(currentElement) 
 }
 return result.join("")
 }
+/* es wird Zeichen für Zeichen überprüft 
+ob es einen Leerschlag gibt, die Funktion bricht ab 
+sobald es einen gibt und alle Ellemente die vor dem
+Leerzeichen sind an der Liste angehängt   */
 
+
+
+/* Aufgabe 16 Lesen Sie die Eingabe bis zum Zeichen '$' als ersten Teil einer Liste ein, und
+den Rest als den zweiten Teil.*/
+
+export function aufgabe16 (args){
+  const input = args
+  let switchFirstPart = true 
+ const listFirst = []
+const listSecond = []
+  for (let i = 0 ; i < input.length ; i++)  {
+    const currentElement = input[i]
+if (currentElement === "$"){
+  switchFirstPart = false
+    } else {
+      if (switchFirstPart === true) {
+        listFirst.push(input[i])
+      } else {
+        listSecond.push(input[i])
+      }
+    }
+  }
+  const result = [listFirst.join(""), listSecond.join("")]
+  return result 
+}
+
+
+
+/*Aufgabe 17
+
+Lesen Sie die Eingabe als Liste ein, Einträge in der Liste werden von einem ','
+getrennt.*/
+export function aufgabe17 (args){
+  const input = args
+ const phrases = []
+ let currentPhrase = []
+
+  for (let i = input.length -1 ; i >=0 ; i--)  {
+
+  }const currentElement = text[i]
+  if (currentElement === ",") {
+    // Wenn wir hier sind haben wir einen ',' gefunden, und möchten den aktuellen Satz als eine Element in phrases speichern.
+    phrases.push(currentPhrase.join(""))
+    currentPhrase = [] // Damit löschen wir alles was im aktuellen Satz drin war.
+  } else {
+    // Wenn wir keinen '.' lesen, dann möchten wir die Zeichen an den aktuellen Satz anhängen.
+    currentPhrase.push(currentElement)
+  }
+  phases.push(currentPhrase.join(""))
+  console.log(phrases)
+}
+
+export function bubbleSort (args) {
+  const input = args
+  const result = []
+  
+  return result.join("")
+}
+
+
+
+/*Aufgabe 18
+
+Schreiben Sie folgende Ausgabe: Sie heissen `name` und sind `alter` Jahre alt,
+wobei `name` und `alter` durch Eingaben eingesetzt werden.*/
+
+export function aufgabe18 (args){
+  const input = args
+  let switchFirstPart = true 
+ const listFirst = []
+const listSecond = []
+  for (let i = input.length -1 ; i >=0 ; i--)  {
+    const currentElement = input[i]
+if (currentElement === "$"){
+  switchFirstPart = false
+    } else {
+      if (switchFirstPart === true) {
+        listFirst.push(input[i])
+      } else {
+        listSecond.push(input[i])
+      }
+    }
+  }
+  //const result = 
+}

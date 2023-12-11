@@ -16,7 +16,13 @@ for (let i = 0; i < input.length; i++)
 return result.join("")
 }
 
- export function aufgabe02 (args){
+
+/* funktion Aufgabe eins geht jeden  einzellnen Zeichen duch
+und sobalb es ein "e" oder "E" findet widr ein Leerschlag angehängt. Wenn es keine 
+"e" oder "E" im Text vorkommen, wird das ganze Text so wie es ist angehängt */ 
+
+
+export function aufgabe02 (args){
   const input = args
   const result = []
   for (let i = 0; i < input.length; i++)
@@ -25,8 +31,9 @@ return result.join("")
    }
 return result.join("")
 }
+/* es werden alle Buchstaben uppercased und auf neue Liste angehängt*/ 
 
-/* Alle e zählen*/
+
 
 export function aufgabe03(args) {
   const input = args
@@ -34,13 +41,15 @@ export function aufgabe03(args) {
   for (let i = 0; i < input.length; i++)  {
     const currentElement = input[i]
     if (currentElement === "e") {
-      count = count + 1
-    } else if (currentElement === "E") {
+      count = count + 1  /* mit dieser Schleife werden nur "e" gezählt*/ 
+    } else if (currentElement === "E") { /* mit dieser Schleife werden jetzt auch "E" gezählt*/ 
       count = count + 1
     }
   }
   return count
 }
+
+
 
 
 /*Zähle alle Wörter in einem Text*/
@@ -57,9 +66,10 @@ export function aufgabe04 (args){
   }
   return count
 }
+/* Stadt den Wörtern werden die leerschläge gezält aber es macht Sinn 
+da es soll Teoretisch nach jedem Wort ein Leerschlaggeben*/ 
 
-
-/*Schreibe eine Funktion, die testet, ob in einem Text mindestens ein
+/* Aufgabe 5 Schreibe eine Funktion, die testet, ob in einem Text mindestens ein
 Grossbuchstabe vorkommt. Fragen: wie ich eine Grossbuchstabe definiere?*/
 
 export function aufgabe05 (args){
@@ -77,6 +87,9 @@ export function aufgabe05 (args){
   return false
 }
 
+/*diese Funktion sucht die leerschäge, Punke und vergleicht ob
+der angeschauter Element gleich wie der selbe Element nur grossgeschrieben ist*/ 
+
 
 
 export function aufgabe06 (args){
@@ -89,6 +102,9 @@ export function aufgabe06 (args){
   }
   return false
 }
+
+/*Überprüft ob es einen Punkt in der Schleife gibt */
+
 
 /*Schreibe eine Funktion, die testet, 
 ob in einem Text das Wort 'und' vorkommt.*/
@@ -110,6 +126,11 @@ export function aufgabe07 (args){
   return false
 }
 
+/*In dieser Funktion wir die Reihenfolge von Wort "und" eingegeben, und es spielt keine Rolle
+wo genau es sich befindet, sodas wenn es ein "und" gibt, wird "true" angezeigt
+wenn nicht dann "false" */
+
+
 export function aufgabe08 (args){
   const input = args
   const result =  []
@@ -124,6 +145,8 @@ export function aufgabe08 (args){
 }
   return result.join("")
 }
+/*in einer neuer Liste werden alle Ellemente so wie sie ind angehängt ausser 
+ "e" sie werden zu den "3"*/
 
 
 /*Teste ob eine Eingabe genau sechs Zeichen lang ist.*/
@@ -136,10 +159,12 @@ export function aufgabe09 (args){
 
   return false
 }
+/* in dieser Funktion hat man die genaue Länge von der ganze Schleife angegeben,
+und "true" wird nur in dem Fall agezeigt, wenn das stimmt*/
 
 
 /*aufgabe 10
-Teste ob eine Eingabe ein korrekter RGB Hexcode ist.*/
+Teste ob eine Eingabe ein korrekter RGB Hexcode (code für die Farben) ist.*/
 
 export function aufgabe10 (args){
   const input = args
@@ -149,7 +174,8 @@ export function aufgabe10 (args){
 
    for (let i = 1; i < input.length; i++) {
     const currentElement = input[i]
-    const ascii = currentElement.charCodeAt(0)
+    const ascii = currentElement.charCodeAt(0) /*umwandelt den currentElem
+    zu einer Ziffer von asciicode die Computer ablesen kann*/ 
 
     if (48 <= ascii && ascii <= 57){
       //ist eine Ziffer
@@ -161,6 +187,9 @@ export function aufgabe10 (args){
    }
   return true 
 }
+/* Solche Code starten mit einem "#" und die länge davon soll 7 Ziffern sein, genau
+das überprüfft diese Funktion, also man hat alle Bedingungen genommen bei denen es bestimmt um keine 
+RGB Hexcode handeln kann*/
 
 /*Gib den ASCII code eines einzelnen Buchstabens an.*/
 export function aufgabe11 (args){
@@ -175,6 +204,7 @@ export function aufgabe11 (args){
 }
 return null
 }
+/* */ 
 
 /*Suche die Position des ersten `e`s in einem Text.*/ 
 

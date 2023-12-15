@@ -93,8 +93,7 @@ Kehren Sie die Eingabe um.
 
 ## Aufgabe 22
 
-Es sollen alle Zeichen aus der Eingabe mit `_` ersetzt werden, bis zum ersten
-`k`.
+es sollen alle Zeichen aus der Eingabe mit `_` ersetzt werden, bis zum ersten `k`.
 
 ## Aufgabe 23
 

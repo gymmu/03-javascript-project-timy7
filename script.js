@@ -114,14 +114,12 @@ export function aufgabe07 (args){
   for (let i = 0; i < input.length; i++)  {
     const currentElement = input[i]
     
-    if (currentElement === "u") {
-      if (input[i+1] === "n")
-      {
+  if (currentElement === "u") {
+    if (input[i+1] === "n"){
     if (input[i+2] === "d")
     return true
   }
 }
-
   }
   return false
 }
@@ -199,12 +197,12 @@ export function aufgabe11 (args){
   if (input.length > 1) return null
   for (let i = 0; i < input.length; i++)  {
     const currentElement = input[i]
-    const ascii = currentElement.charCodeAt(0)
-    return ascii
+    const ascii = currentElement.charCodeAt(0)/* nimmt den Asciiwert aus dem Element */
+    return ascii  /*gebt den umgewandelte Element zurück*/
 }
 return null
 }
-/* */ 
+
 
 /*Suche die Position des ersten `e`s in einem Text.*/ 
 
@@ -284,12 +282,13 @@ den Rest als den zweiten Teil.*/
 
 export function aufgabe16 (args){
   const input = args
-  let switchFirstPart = true 
+  let switchFirstPart = true /*Bestimmung von einer Konstante für die folgende Bedingung */
  const listFirst = []
 const listSecond = []
   for (let i = 0 ; i < input.length ; i++)  {
     const currentElement = input[i]
-if (currentElement === "$"){
+     
+    if (input[i] === "$"){
   switchFirstPart = false
     } else {
       if (switchFirstPart === true) {
@@ -314,9 +313,9 @@ export function aufgabe17 (args){
  const phrases = []
  let currentPhrase = []
 
-  for (let i = input.length -1 ; i >=0 ; i--)  {
+  for (let i =0 ; i < input.length ; i++)  {
 
-  }const currentElement = text[i]
+  const currentElement = input[i]
   if (currentElement === ",") {
     // Wenn wir hier sind haben wir einen ',' gefunden, und möchten den aktuellen Satz als eine Element in phrases speichern.
     phrases.push(currentPhrase.join(""))
@@ -325,9 +324,12 @@ export function aufgabe17 (args){
     // Wenn wir keinen '.' lesen, dann möchten wir die Zeichen an den aktuellen Satz anhängen.
     currentPhrase.push(currentElement)
   }
-  phases.push(currentPhrase.join(""))
-  console.log(phrases)
 }
+  phrases.push(currentPhrase.join(""))
+ return phrases
+}
+
+
 
 export function bubbleSort (args) {
   const input = args
@@ -344,7 +346,7 @@ export function bubbleSort (args) {
     }
   }
   const result = list.join("")
-  console.log(result)
+  return result
 }
 /*diese Funktion herstellt zwei Listen, die Erste ist für belibigen Element, 
 und die zweite ist für den Element der direkt nach dem Element aus der erste liste kommt. Dann uberpüfft der code Zeichen für Zeichen
@@ -363,9 +365,10 @@ export function aufgabe18 (args){
   let switchFirstPart = true 
  const listFirst = []
 const listSecond = []
-  for (let i = input.length -1 ; i >=0 ; i--)  {
+  for (let i = 0 ; i < input.length ; i++)  {
     const currentElement = input[i]
-if (currentElement === "$"){
+     
+    if (input[i] === " "){
   switchFirstPart = false
     } else {
       if (switchFirstPart === true) {
@@ -375,5 +378,130 @@ if (currentElement === "$"){
       }
     }
   }
-  //const result = 
+  const result = "Sie heissen " + listFirst.join("") + "und sind"+ [listSecond.join("")]
+  return result 
+}
+
+
+/*Jedes Zeichen in der Eingabe soll verdoppelt werden.*/
+  
+  
+export function aufgabe19 (args){
+  const input = args
+  const result = [] 
+  for (let i = 0 ; i < input.length ; i++)  {
+    const currentElement = input[i]
+   result.push(currentElement)
+   result.push(currentElement)
+ }
+ return result.join("")
+}
+ 
+
+/*Prüfen Sie ob nach jedem `.` ein Leerschlag kommt.*/
+
+
+export function aufgabe20 (args) {
+  const input = args
+  const result = []
+  
+for (let i = 0; i < input.length; i++) {
+  const currentElement = input[i]
+  if (currentElement ==="."){
+  if (input [i+1] === " ")
+  return true
+}
+  
+}
+
+  return false
+}
+
+/*Kehren Sie die Eingabe um.*/
+export function aufgabe20 (args) {
+  const input = args
+  const result = []
+  
+  for (let i = input.length -1 ; i >=0 ; i--)  {
+  const currentElement = input[i]
+  result.push(currentElement)
+}
+result.join("")
+}
+
+/*es sollen alle Zeichen aus der Eingabe mit `_` ersetzt werden, bis zum ersten `k`.*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export function aufgabe24 (args){
+  const input = args
+  const result =[]
+
+  if (input.length === 1) return input
+
+  const firstElement = input[0]
+  const lastElement = input [input.length-1]
+
+result.push(lastElement)
+for (let i; 1<input.length -1; i++){
+  const currentElement = input [i]
+  result.push(currentElement)
+}
+result.push(firstElement)
+return result.join("")
 }
